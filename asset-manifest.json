@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Movies.git/static/js/main.2b8fb833.js",
-    "index.html": "/Movies.git/index.html",
-    "main.2b8fb833.js.map": "/Movies.git/static/js/main.2b8fb833.js.map"
+    "main.js": "/Movies/static/js/main.2b8fb833.js",
+    "index.html": "/Movies/index.html",
+    "main.2b8fb833.js.map": "/Movies/static/js/main.2b8fb833.js.map"
   },
   "entrypoints": [
     "static/js/main.2b8fb833.js"
