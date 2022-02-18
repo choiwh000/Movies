@@ -1,0 +1,39 @@
+header {
+  height: 10vh;
+  display: flex;
+}
+
+#home_ul {
+  display: flex;
+  gap: 30px;
+}
+
+li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  line-height: 10vh;
+  padding: 1vh;
+  border-bottom: 2px solid #fff;
+}
+
+#logo {
+  text-decoration: none;
+  color: #333;
+  line-height: 10vh;
+  font-size: 30px;
+  padding: 0px 5vw;
+}
+
+li a:hover {
+  border-bottom: 2px solid red;
+  transition: all 0.3s ease-in-out;
+}
+
+.movies {
+  width: 55vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 100px auto;
+}
