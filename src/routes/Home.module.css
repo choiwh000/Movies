@@ -1,3 +1,12 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 header {
   height: 10vh;
   display: flex;
@@ -36,4 +45,67 @@ li a:hover {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 100px auto;
+}
+
+.slide {
+  height: 50vh;
+  margin: auto;
+}
+
+.slide img {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 15%;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  box-shadow: 6px 6px 20px rgb(177, 177, 177);
+}
+
+.slideTitle {
+  position: absolute;
+  right: 10px;
+  top: 20%;
+}
+
+.slideTitle p {
+  width: 20vw;
+  font-size: 1rem;
+  justify-content: space-between;
+  text-align: center;
+  color: #fff;
+  
+}
+
+#zemok {
+  font-size: 2rem;
+  margin-bottom: 100px;
+  font-weight: bold;
+}
+
+.slideZip {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.btnP {
+  left: 5%;
+  position: absolute;
+  top: 35%;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: 'pointer';
+  padding: 0 100px 0 100px;
+}
+
+.btnN {
+  right: 5%;
+  position: absolute;
+  top: 35%;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: 'pointer';
+  padding: 0 100px 0 100px;
 }
