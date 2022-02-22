@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -5,9 +7,12 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
+  width: 55vw;
+  margin: auto;
   height: 10vh;
   display: flex;
 }
@@ -31,7 +36,12 @@ li a {
   color: #333;
   line-height: 10vh;
   font-size: 30px;
-  padding: 0px 5vw;
+  padding-right: 5vw;
+  transition: all 0.5s ease;
+}
+
+#logo:hover {
+  font-size: 40px;
 }
 
 li a:hover {
@@ -74,7 +84,6 @@ li a:hover {
   justify-content: space-between;
   text-align: center;
   color: #fff;
-  
 }
 
 #zemok {
@@ -93,19 +102,29 @@ li a:hover {
 .btnP {
   left: 5%;
   position: absolute;
-  top: 35%;
+  top: 25%;
   font-size: 1.5rem;
   color: #fff;
-  cursor: 'pointer';
-  padding: 0 100px 0 100px;
+  cursor: "pointer";
+  padding: 100px 100px;
 }
 
 .btnN {
   right: 5%;
   position: absolute;
-  top: 35%;
+  top: 25%;
   font-size: 1.5rem;
   color: #fff;
-  cursor: 'pointer';
-  padding: 0 100px 0 100px;
+  cursor: "pointer";
+  padding: 100px 100px;
+}
+
+#slideNum {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.7;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

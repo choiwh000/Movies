@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 55vw;
+  margin: auto;
+  height: 10vh;
+  display: flex;
+}
+
+#home_ul {
+  display: flex;
+  gap: 30px;
+}
+
+header li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  line-height: 10vh;
+  padding: 1vh;
+  border-bottom: 2px solid #fff;
+}
+
+#logo {
+  text-decoration: none;
+  color: #333;
+  line-height: 10vh;
+  font-size: 30px;
+  padding-right: 5vw;
+  transition: all 0.5s ease;
+}
+
+#logo:hover {
+  font-size: 40px;
+}
+
+header >  li a:hover {
+  border-bottom: 2px solid red;
+  transition: all 0.3s ease-in-out;
+}
+
+.topSection {
+  width: 100vw;
+  height: 50vh;
+  background-color: #333;
+  position: relative;
+}
+
+.titleZip {
+  position: absolute;
+  top: 75px;
+  left: 800px;
+  width: 40vw;
+  height: 38vh;
+}
+
+#topImg {
+  position: absolute;
+  width: 300px;
+  top: 150px;
+  left: 22.5vw;
+  border-radius: 12px;
+}
+
+#movieTitle {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  top: 0px;
+  left: 0px;
+  text-align: left;
+}
+
+#movieYear {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  top: 60px;
+  left: 0px;
+  text-align: left;
+}
+
+#movieRating {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  top: 95px;
+  left: 0px;
+  text-align: left;
+}
+
+#movieRuntime {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  top: 130px;
+  left: 0px;
+  text-align: left;
+}
+
+#movieDescription {
+  height: 130px;
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  top: 165px;
+  left: 0px;
+  text-align: left;
+}
+
+#movieGen {
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  left: 0px;
+  bottom: 0;
+  text-align: left;
+}
+
+.titleZip ul {
+  display: flex;
+  gap: 30px;
+}
+
+.titleZip li{
+  border-radius: 20px;
+  padding: 4px 16px;
+  background-color: rgb(37, 154, 201);
+  cursor: pointer;
+}
+
+#moreBtn {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 20px;
+}

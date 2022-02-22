@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import useInterval from "use-interval";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -31,25 +31,25 @@ function Home() {
       setNum(num + 1);
     }
   }, 10000);
-  console.log(movies[num]);
+
   const onClickP = () => {
     if (num === 0) {
       setNum(movies.length - 1);
     } else {
       setNum(num - 1);
     }
-  }
+  };
   const onClickN = () => {
     if (num === movies.length - 1) {
       setNum(0);
     } else {
       setNum(num + 1);
     }
-  }
+  };
 
-  const elementL = <FontAwesomeIcon icon={faChevronLeft} />
-  const elementR = <FontAwesomeIcon icon={faChevronRight} />
-
+  const elementL = <FontAwesomeIcon icon={faChevronLeft} />;
+  const elementR = <FontAwesomeIcon icon={faChevronRight} />;
+  console.log(movies);
   return (
     <div>
       <header>
@@ -61,10 +61,10 @@ function Home() {
             <Link to={`/Movies`}>Main</Link>
           </li>
           <li>
-            <Link to={`/movie/category`}>Category</Link>
+            <Link to={`/Movie/category`}>Category</Link>
           </li>
           <li>
-            <Link to={`/movie/My`}>My</Link>
+            <Link to={`/Movie/my`}>My</Link>
           </li>
         </ul>
       </header>
@@ -77,14 +77,31 @@ function Home() {
             backgroundPosition: `center center`,
           }}
         >
-          <p className={styles.btnP} onClick={onClickP} style={{cursor: 'pointer'}}>{elementL}</p>
-          <p className={styles.btnN} onClick={onClickN} style={{cursor: 'pointer'}}>{elementR}</p>
+          <p id={styles.slideNum}>
+            {num + 1} / {movies.length}
+          </p>
+          <p
+            className={styles.btnP}
+            onClick={onClickP}
+            style={{ cursor: "pointer" }}
+          >
+            {elementL}
+          </p>
+          <p
+            className={styles.btnN}
+            onClick={onClickN}
+            style={{ cursor: "pointer" }}
+          >
+            {elementR}
+          </p>
           <div className={styles.slideZip}>
             <div className={styles.slide}>
-              <img
-                src={movies[num].large_cover_image}
-                style={{ width: "250px" }}
-              />
+              <Link to={`/movie/${movies[num].id}`}>
+                <img
+                  src={movies[num].large_cover_image}
+                  style={{ width: "250px" }}
+                />
+              </Link>
             </div>
             <div className={styles.slideTitle}>
               <p id={styles.zemok}>{movies[num].title}</p>
