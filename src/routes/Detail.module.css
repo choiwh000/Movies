@@ -30,12 +30,14 @@ header li a {
   color: #333;
   line-height: 10vh;
   font-size: 30px;
+  padding-left: 20px;
   padding-right: 5vw;
   transition: all 0.5s ease;
 }
 
 #logo:hover {
-  font-size: 40px;
+  transform: scaleX(1.2);
+  transform-origin: left center;
 }
 
 header >  li a:hover {

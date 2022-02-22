@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
 
 * {
   -webkit-touch-callout: none;
@@ -7,7 +7,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -36,12 +36,14 @@ li a {
   color: #333;
   line-height: 10vh;
   font-size: 30px;
+  padding-left: 20px;
   padding-right: 5vw;
   transition: all 0.5s ease;
 }
 
 #logo:hover {
-  font-size: 40px;
+  transform: scaleX(1.2);
+  transform-origin: left center;
 }
 
 li a:hover {
@@ -127,4 +129,56 @@ li a:hover {
   top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.loading {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  vertical-align: middle;
+  width: 20%;
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+}
+
+.loading div {
+  background-color: #333;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.loading div:nth-child(1) {
+  background-color: rgb(190, 60, 60);
+  animation: load 1s 0s ease-in-out infinite;
+}
+
+.loading div:nth-child(2) {
+  background-color: rgb(200, 202, 75);
+  animation: load 1s 0.2s ease-in-out infinite;
+}
+
+.loading div:nth-child(3) {
+  background-color: rgb(79, 109, 192);
+  animation: load 1s 0.4s ease-in-out infinite;
+}
+
+.loading div:nth-child(4) {
+  background-color: rgb(184, 73, 178);
+  animation: load 1s 0.6s ease-in-out infinite;
+}
+
+@keyframes load {
+  0% {
+    margin-bottom: 0px;
+  }
+
+  50% {
+    margin-bottom: 100px;
+  }
+
+  100% {
+    margin-bottom: 0px;
+  }
 }
