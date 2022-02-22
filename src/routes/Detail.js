@@ -68,24 +68,32 @@ function Detail() {
   };
   return (
     <div>
-      <header>
-        <Link to={`/Movies`} id={styles.logo}>
-          Logo
-        </Link>
-        <ul id={styles.home_ul}>
-          <li>
-            <Link to={`/Movies`}>Main</Link>
-          </li>
-          <li>
-            <Link to={`/Movie/category`}>Category</Link>
-          </li>
-          <li>
-            <Link to={`/Movie/my`}>My</Link>
-          </li>
-        </ul>
-      </header>
+      {loading ? null : (
+        <header>
+          <Link to={`/Movies`} id={styles.logo}>
+            Logo
+          </Link>
+          <ul id={styles.home_ul}>
+            <li>
+              <Link to={`/Movies`}>Main</Link>
+            </li>
+            <li>
+              <Link to={`/Movie/category`}>Category</Link>
+            </li>
+            <li>
+              <Link to={`/Movie/my`}>My</Link>
+            </li>
+          </ul>
+        </header>
+      )}
+
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loading}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       ) : (
         <div>
           <div className={styles.topSection}>

@@ -146,3 +146,55 @@ header >  li a:hover {
   cursor: pointer;
   padding: 0 20px;
 }
+
+.loading {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  vertical-align: middle;
+  width: 20%;
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+}
+
+.loading div {
+  background-color: #333;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.loading div:nth-child(1) {
+  background-color: rgb(190, 60, 60);
+  animation: load 1s 0s ease-in-out infinite;
+}
+
+.loading div:nth-child(2) {
+  background-color: rgb(200, 202, 75);
+  animation: load 1s 0.2s ease-in-out infinite;
+}
+
+.loading div:nth-child(3) {
+  background-color: rgb(79, 109, 192);
+  animation: load 1s 0.4s ease-in-out infinite;
+}
+
+.loading div:nth-child(4) {
+  background-color: rgb(184, 73, 178);
+  animation: load 1s 0.6s ease-in-out infinite;
+}
+
+@keyframes load {
+  0% {
+    margin-bottom: 0px;
+  }
+
+  50% {
+    margin-bottom: 100px;
+  }
+
+  100% {
+    margin-bottom: 0px;
+  }
+}
