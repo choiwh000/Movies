@@ -3,14 +3,20 @@ import { Link } from "react-router-dom";
 import styles from "./Movie.module.css";
 
 function Movie({ id, coverImg, title, rating, summary, genres }) {
+  const onClick = () => {
+    console.log('hi');
+    
+  }
   return (
     <div className={styles.movie}>
-      <div claaName={styles.movieImg}>
-        <img id={styles.coverImg} src={coverImg} alt={title} />
+      <div className={styles.movieImg}>
+      <Link to={`/Movies/${id}`}>
+        <img id={styles.coverImg} src={coverImg} alt={title} onClick={onClick} />
+        </Link>
       </div>
       <div>
         <p className={styles.title}>
-          <Link to={`/movie/${id}`}>{title}</Link>
+          <Link to={`/Movies/${id}`}>{title}</Link>
         </p>
       </div>
       <h3>{rating}</h3>

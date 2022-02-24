@@ -68,6 +68,22 @@ function Detail() {
   };
   return (
     <div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: '-1',
+          height: "100vh",
+          width: "100vw",
+          backgroundImage: `url(${movie.background_image_original})`,
+          backgroundPosition: `center center`,
+          backgroundSize: `cover`,
+          opacity: 0.2,
+        }}
+      >
+        {" "}
+      </div>
       {loading ? null : (
         <header>
           <Link to={`/Movies`} id={styles.logo}>
@@ -78,10 +94,10 @@ function Detail() {
               <Link to={`/Movies`}>Main</Link>
             </li>
             <li>
-              <Link to={`/Movie/category`}>Category</Link>
+              <Link to={`/category`}>Category</Link>
             </li>
             <li>
-              <Link to={`/Movie/my`}>My</Link>
+              <Link to={`/Movies/my`}>My</Link>
             </li>
           </ul>
         </header>
@@ -97,9 +113,10 @@ function Detail() {
       ) : (
         <div>
           <div className={styles.topSection}>
+            <div id={styles.topBack}/>
             <div className={styles.titleZip}>
               <p id={styles.movieTitle}>{movie.title}</p>
-              <p id={styles.movieRating}>💙 {movie.rating}</p>
+              <p id={styles.movieRating}>💗 {movie.rating}</p>
               <p id={styles.movieRuntime}>🕓 {movie.runtime} min</p>
               <p id={styles.movieYear}>🎬 {movie.year}</p>
               <p id={styles.movieDescription}>

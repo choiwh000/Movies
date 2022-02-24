@@ -25,7 +25,7 @@ function Home() {
   }, []);
 
   useInterval(() => {
-    if (num + 2>= movies.length - 1) {
+    if (num + 2 >= movies.length - 1) {
       setNum(0);
     } else {
       setNum(num + 2);
@@ -40,7 +40,7 @@ function Home() {
     }
   };
   const onClickN = () => {
-    if (num+2 >= movies.length-1) {
+    if (num + 2 >= movies.length - 1) {
       setNum(0);
     } else {
       setNum(num + 2);
@@ -52,23 +52,25 @@ function Home() {
   console.log(movies);
   return (
     <div>
-      {loading ? null : (<header>
-        <Link to={`/Movies`} id={styles.logo}>
-          Logo
-        </Link>
-        <ul id={styles.home_ul}>
-          <li>
-            <Link to={`/Movies`}>Main</Link>
-          </li>
-          <li>
-            <Link to={`/Movie/category`}>Category</Link>
-          </li>
-          <li>
-            <Link to={`/Movie/my`}>My</Link>
-          </li>
-        </ul>
-      </header>)}
-      
+      {loading ? null : (
+        <header>
+          <Link to={`/Movies`} id={styles.logo}>
+            Logo
+          </Link>
+          <ul id={styles.home_ul}>
+            <li>
+              <Link to={`/Movies`}>Main</Link>
+            </li>
+            <li>
+              <Link to={`/category`}>Category</Link>
+            </li>
+            <li>
+              <Link to={`/Movies/my`}>My</Link>
+            </li>
+          </ul>
+        </header>
+      )}
+
       {loading ? null : (
         <div
           style={{
@@ -80,7 +82,7 @@ function Home() {
           }}
         >
           <p id={styles.slideNum}>
-            {num/2 + 1} / {movies.length/2}
+            {num / 2 + 1} / {movies.length / 2}
           </p>
           <p
             className={styles.btnP}
@@ -98,14 +100,14 @@ function Home() {
           </p>
           <div className={styles.slideZip}>
             <div className={styles.slide}>
-              <Link to={`/movie/${movies[num].id}`}>
+              <Link to={`/Movies/${movies[num].id}`}>
                 <img
                   src={movies[num].large_cover_image}
                   style={{ width: "250px", transition: "all 1s ease-in-out" }}
                 />
               </Link>
             </div>
-            <div className={styles.slideTitle} >
+            <div className={styles.slideTitle}>
               <p id={styles.zemok}>{movies[num].title}</p>
               <p>
                 {movies[num].summary.length > 240
@@ -116,6 +118,7 @@ function Home() {
           </div>
         </div>
       )}
+      {loading ? null : <p id={styles.moviesTitle}>Top Rating Movies!</p>}
 
       {loading ? (
         <div className={styles.loading}>
@@ -124,7 +127,6 @@ function Home() {
           <div></div>
           <div></div>
         </div>
-        // <h1>Loading...</h1>
       ) : (
         <div className={styles.movies}>
           {movies.map((movie) => (

@@ -19,20 +19,23 @@ ul {
   height: 100%;
   margin-bottom: 100px;
   text-align: center;
+  border-radius: 5px;
 }
 
 .movieImg {
   width: 230px;
   height: 345px;
+
 }
 
 #coverImg {
+
   cursor: pointer;
   transition: all 0.5s ease;
 }
 
 #coverImg:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .title {
@@ -41,7 +44,7 @@ ul {
 }
 
 .title a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
 }

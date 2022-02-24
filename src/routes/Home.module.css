@@ -8,6 +8,12 @@
   -ms-user-select: none;
   user-select: none;
   font-family: "Roboto", sans-serif;
+  
+}
+
+body {
+  background-color: rgb(32, 32, 32);
+  
 }
 
 header {
@@ -15,6 +21,7 @@ header {
   margin: auto;
   height: 10vh;
   display: flex;
+  color: #fff;
 }
 
 #home_ul {
@@ -24,16 +31,16 @@ header {
 
 li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-size: 20px;
   line-height: 10vh;
   padding: 1vh;
-  border-bottom: 2px solid #fff;
+  opacity: 0.2;
 }
 
 #logo {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   line-height: 10vh;
   font-size: 30px;
   padding-left: 20px;
@@ -47,8 +54,8 @@ li a {
 }
 
 li a:hover {
-  border-bottom: 2px solid red;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .movies {
@@ -56,7 +63,7 @@ li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .slide {
@@ -70,8 +77,8 @@ li a:hover {
   left: 20px;
   top: 15%;
   border: 1px solid #fff;
-  border-radius: 20px;
-  box-shadow: 6px 6px 20px rgb(177, 177, 177);
+  border-radius: 10px;
+  box-shadow: 6px 6px 20px rgb(138, 138, 138);
 }
 
 .slideTitle {
@@ -136,7 +143,7 @@ li a:hover {
   flex-wrap: nowrap;
   justify-content: space-between;
   vertical-align: middle;
-  width: 20%;
+  width: 5%;
   height: 100vh;
   margin: auto;
   align-items: center;
@@ -144,9 +151,9 @@ li a:hover {
 
 .loading div {
   background-color: #333;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
 }
 
 .loading div:nth-child(1) {
@@ -181,4 +188,12 @@ li a:hover {
   100% {
     margin-bottom: 0px;
   }
+}
+
+#moviesTitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 80px;
 }
