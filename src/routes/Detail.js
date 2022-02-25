@@ -70,10 +70,10 @@ function Detail() {
     <div>
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          zIndex: '-1',
+          zIndex: "-1",
           height: "100vh",
           width: "100vw",
           backgroundImage: `url(${movie.background_image_original})`,
@@ -81,9 +81,7 @@ function Detail() {
           backgroundSize: `cover`,
           opacity: 0.2,
         }}
-      >
-        {" "}
-      </div>
+      ></div>
       {loading ? null : (
         <header>
           <Link to={`/Movies`} id={styles.logo}>
@@ -113,7 +111,7 @@ function Detail() {
       ) : (
         <div>
           <div className={styles.topSection}>
-            <div id={styles.topBack}/>
+            <div id={styles.topBack} />
             <div className={styles.titleZip}>
               <p id={styles.movieTitle}>{movie.title}</p>
               <p id={styles.movieRating}>💗 {movie.rating}</p>
