@@ -51,7 +51,7 @@ function Home() {
   const elementR = <FontAwesomeIcon icon={faChevronRight} />;
   console.log(movies);
   return (
-    <div>
+    <div >
       {loading ? null : (
         <header>
           <Link to={`/Movies`} id={styles.logo}>
@@ -73,12 +73,9 @@ function Home() {
 
       {loading ? null : (
         <div
+          className={styles.slideBack}
           style={{
             backgroundImage: `url(${movies[num].background_image})`,
-            backgroundSize: `cover`,
-            height: `55vh`,
-            backgroundPosition: `center center`,
-            transition: "all 2s ease-in-out",
           }}
         >
           <p id={styles.slideNum}>
@@ -98,13 +95,10 @@ function Home() {
           >
             {elementR}
           </p>
-          <div className={styles.slideZip}>
+          <div className={styles.slideZip} >
             <div className={styles.slide}>
               <Link to={`/Movies/${movies[num].id}`}>
-                <img
-                  src={movies[num].large_cover_image}
-                  style={{ width: "250px", transition: "all 1s ease-in-out" }}
-                />
+                <img src={movies[num].large_cover_image}/>
               </Link>
             </div>
             <div className={styles.slideTitle}>

@@ -8,18 +8,16 @@
   -ms-user-select: none;
   user-select: none;
   font-family: "Roboto", sans-serif;
-  
 }
 
 body {
   background-color: rgb(32, 32, 32);
-  
 }
 
 header {
-  width: 55vw;
+  width: 1050px;
   margin: auto;
-  height: 10vh;
+  height: 100%;
   display: flex;
   color: #fff;
 }
@@ -33,6 +31,7 @@ li a {
   text-decoration: none;
   color: #fff;
   font-size: 20px;
+  width: 100%;
   line-height: 10vh;
   padding: 1vh;
   opacity: 0.2;
@@ -58,8 +57,16 @@ li a:hover {
   opacity: 1;
 }
 
+.slideBack {
+  background-size: cover;
+  height: 520px;
+  background-position: center center;
+  transition: all 1s ease-in-out;
+}
+
+
 .movies {
-  width: 55vw;
+  width: 55%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -67,28 +74,29 @@ li a:hover {
 }
 
 .slide {
-  height: 50vh;
+  height: 550px;
   margin: auto;
 }
 
 .slide img {
-  cursor: pointer;
   position: absolute;
-  left: 20px;
-  top: 15%;
+  cursor: pointer;
+  right: 1050px;
+  top: 170px;
   border: 1px solid #fff;
   border-radius: 10px;
+  width: 250px;
   box-shadow: 6px 6px 20px rgb(138, 138, 138);
 }
 
 .slideTitle {
   position: absolute;
-  right: 10px;
-  top: 20%;
+  top: 220px;
+  right: 500px;
 }
 
 .slideTitle p {
-  width: 20vw;
+  width: 400px;
   font-size: 1rem;
   justify-content: space-between;
   text-align: center;
@@ -100,18 +108,20 @@ li a:hover {
   margin-bottom: 100px;
   font-weight: bold;
 }
-
+/* 
 .slideZip {
   position: relative;
+  top: 30px;
   width: 50%;
+  height: 100%;
   margin: auto;
   display: flex;
-}
+} */
 
 .btnP {
   left: 5%;
   position: absolute;
-  top: 25%;
+  top: 240px;
   font-size: 1.5rem;
   color: #fff;
   cursor: "pointer";
@@ -119,9 +129,9 @@ li a:hover {
 }
 
 .btnN {
-  right: 5%;
+  left: 85%;
   position: absolute;
-  top: 25%;
+  top: 240px;
   font-size: 1.5rem;
   color: #fff;
   cursor: "pointer";
@@ -133,7 +143,7 @@ li a:hover {
   font-size: 1.2rem;
   color: #fff;
   opacity: 0.7;
-  top: 63%;
+  top: 580px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -196,4 +206,218 @@ li a:hover {
   color: #fff;
   text-align: center;
   margin-top: 80px;
+}
+
+@media screen and (max-width: 1440px) {
+  header {
+    width: 550px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    color: #fff;
+  }
+
+  .slideBack {
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    transition: all 1s ease-in-out;
+  }
+
+  .slide {
+    height: 400px;
+    margin: auto;
+  }
+
+  .slide img {
+    top: 140px;
+    right: 770px;
+    width: 200px;
+  }
+
+  .slideTitle {
+    right: 400px;
+    top: 190px;
+  }
+
+  .slideTitle p {
+    width: 250px;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+  }
+
+  #zemok {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+  
+  .btnP {
+    left: 5%;
+    position: absolute;
+    top: 180px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  .btnN {
+    right: 5%;
+    position: absolute;
+    top: 180px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  #slideNum {
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.7;
+    top: 460px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 1200px) {
+  header {
+    width: 550px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    color: #fff;
+  }
+
+  .slideBack {
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    transition: all 1s ease-in-out;
+  }
+
+  .slide {
+    height: 400px;
+    margin: auto;
+  }
+
+  .slide img {
+    width: 200px;
+    right: 700px;
+  }
+
+  .slideTitle {
+    right: 320px;
+    top: 180px;
+  }
+
+  .slideTitle p {
+    width: 200px;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+  }
+
+  #zemok {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+  
+  .btnP {
+    left: 5%;
+    position: absolute;
+    top: 180px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  .btnN {
+    right: 5%;
+    position: absolute;
+    top: 180px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  #slideNum {
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.7;
+    top: 460px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .slideBack {
+    background-size: cover;
+    height: 300px;
+    background-position: center center;
+    transition: all 1s ease-in-out;
+  }
+
+  .slide {
+    height: 300px;
+    margin: auto;
+  }
+
+  .slide img {
+    right: 550px;
+    width: 150px;
+  }
+
+  .slideTitle {
+    right: 250px;
+    top: 160px;
+  }
+
+  .slideTitle p {
+    width: 200px;
+    font-size: 0.5rem;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+  }
+
+  #zemok {
+    font-size: 1rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+  
+  .btnP {
+    left: 5%;
+    position: absolute;
+    top: 130px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  .btnN {
+    right: 5%;
+    position: absolute;
+    top: 130px;
+    color: #fff;
+    cursor: "pointer";
+    padding: 100px 100px;
+  }
+  
+  #slideNum {
+    position: absolute;
+    font-size: 0.7rem;
+    color: #fff;
+    opacity: 0.7;
+    top: 370px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
