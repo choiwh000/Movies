@@ -11,6 +11,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const [num, setNum] = useState(0);
+  const [ham, setHam] = useState(true);
   const getMovies = async () => {
     const json = await (
       await fetch(
@@ -24,6 +25,13 @@ function Home() {
     getMovies();
   }, []);
 
+  const setPosition = () => {
+    if (window.innerWidth <= 600) {
+      setHam(true);
+    } else if (window.innerWidth > 600) {
+      setHam(false);
+    }
+  };
   useInterval(() => {
     if (num + 2 >= movies.length - 1) {
       setNum(0);
@@ -47,27 +55,34 @@ function Home() {
     }
   };
 
+  window.addEventListener("resize", setPosition);
+
   const elementL = <FontAwesomeIcon icon={faChevronLeft} />;
   const elementR = <FontAwesomeIcon icon={faChevronRight} />;
   console.log(movies);
+  console.log(window.innerWidth);
   return (
-    <div >
+    <div>
       {loading ? null : (
         <header>
           <Link to={`/Movies`} id={styles.logo}>
             Logo
           </Link>
-          <ul id={styles.home_ul}>
-            <li>
-              <Link to={`/Movies`}>Main</Link>
-            </li>
-            <li>
-              <Link to={`/category`}>Category</Link>
-            </li>
-            <li>
-              <Link to={`/Movies/my`}>My</Link>
-            </li>
-          </ul>
+          {ham ? (
+            <p id={styles.ham}>hamburger</p>
+          ) : (
+            <ul id={styles.home_ul}>
+              <li>
+                <Link to={`/Movies`}>Main</Link>
+              </li>
+              <li>
+                <Link to={`/category`}>Category</Link>
+              </li>
+              <li>
+                <Link to={`/Movies/my`}>My</Link>
+              </li>
+            </ul>
+          )}
         </header>
       )}
 
@@ -95,10 +110,10 @@ function Home() {
           >
             {elementR}
           </p>
-          <div className={styles.slideZip} >
+          <div className={styles.slideZip}>
             <div className={styles.slide}>
               <Link to={`/Movies/${movies[num].id}`}>
-                <img src={movies[num].large_cover_image}/>
+                <img src={movies[num].large_cover_image} />
               </Link>
             </div>
             <div className={styles.slideTitle}>
