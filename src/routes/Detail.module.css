@@ -4,13 +4,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-header {
-  width: 55vw;
-  margin: auto;
-  height: 10vh;
-  display: flex;
-}
-
 #home_ul {
   display: flex;
   gap: 30px;

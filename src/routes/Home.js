@@ -4,14 +4,26 @@ import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import useInterval from "use-interval";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
+  const elementL = <FontAwesomeIcon icon={faChevronLeft} />;
+  const elementR = <FontAwesomeIcon icon={faChevronRight} />;
+  const esc = <FontAwesomeIcon icon={faXmark} style={{ fontSize: "34px" }} />;
+  const hambar = <FontAwesomeIcon icon={faBars} style={{ fontSize: "30px" }} />;
+
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const [num, setNum] = useState(0);
-  const [ham, setHam] = useState(true);
+  const [ham, setHam] = useState(false);
+  const [click, setClick] = useState(true);
+  const [toggle, setToggle] = useState(false);
+
   const getMovies = async () => {
     const json = await (
       await fetch(
@@ -23,6 +35,10 @@ function Home() {
   };
   useEffect(() => {
     getMovies();
+  }, []);
+
+  useEffect(() => {
+    setPosition();
   }, []);
 
   const setPosition = () => {
@@ -55,10 +71,16 @@ function Home() {
     }
   };
 
-  window.addEventListener("resize", setPosition);
+  const clicked = () => {
+    if (click === true) {
+      setClick(false);
+    } else {
+      setClick(true);
+    }
+  };
 
-  const elementL = <FontAwesomeIcon icon={faChevronLeft} />;
-  const elementR = <FontAwesomeIcon icon={faChevronRight} />;
+  window.addEventListener("resize", setPosition);
+  console.log(click);
   console.log(movies);
   console.log(window.innerWidth);
   return (
@@ -69,7 +91,9 @@ function Home() {
             Logo
           </Link>
           {ham ? (
-            <p id={styles.ham}>hamburger</p>
+            <p id={styles.ham} onClick={clicked}>
+              {click ? hambar : esc}
+            </p>
           ) : (
             <ul id={styles.home_ul}>
               <li>
