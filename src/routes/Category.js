@@ -3,12 +3,51 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Category.module.css";
 import Movie from "../components/Movie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Category() {
+  const esc = <FontAwesomeIcon icon={faXmark} style={{ fontSize: "34px" }} />;
+  const hambar = <FontAwesomeIcon icon={faBars} style={{ fontSize: "30px" }} />;
+
   const [loading, setLoading] = useState(true);
   const [genre, setGenre] = useState([]);
   const [select, setSelect] = useState();
-  
+  const [ham, setHam] = useState(false);
+  const [click, setClick] = useState(true);
+  const [hamClick, setHamClick] = useState(true);
+
+  useEffect(() => {
+    setPosition();
+  }, []);
+
+  const setPosition = () => {
+    if (window.innerWidth <= 600) {
+      setHam(true);
+      setHamClick(false);
+    } else if (window.innerWidth > 600) {
+      setHam(false);
+      setHamClick(true);
+    }
+  };
+
+  const clicked = () => {
+    if (click === true) {
+      setClick(false);
+      setHamClick(true);
+    } else {
+      setClick(true);
+      setHamClick(false);
+    }
+  };
+
+  const linkClick = () => {
+    setClick(true);
+    setHamClick(false);
+  };
+
+  window.addEventListener("resize", setPosition);
+
   const gen = [
     "Action",
     "Animation",
@@ -25,7 +64,11 @@ function Category() {
 
   const getGenre = async () => {
     const jsonGenre = await (
-      await fetch(`https://yts.mx/api/v2/list_movies.json?genre=${select ? select : 'action'}`)
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?genre=${
+          select ? select : "action"
+        }`
+      )
     ).json();
     setGenre(jsonGenre.data.movies);
     setLoading(false);
@@ -57,20 +100,33 @@ function Category() {
         </div>
       ) : (
         <header>
-          <Link to={`/Movies`} id={styles.logo}>
+          <Link to={`/Movies`} id={styles.logo} onClick={linkClick}>
             Logo
           </Link>
-          <ul id={styles.home_ul}>
-            <li>
-              <Link to={`/Movies`}>Main</Link>
-            </li>
-            <li>
-              <Link to={`/category`}>Category</Link>
-            </li>
-            <li>
-              <Link to={`/Movies/my`}>My</Link>
-            </li>
-          </ul>
+          {ham ? (
+            <p id={styles.ham} onClick={clicked}>
+              {click ? hambar : esc}
+            </p>
+          ) : null}
+          {hamClick ? (
+            <ul id={styles.home_ul}>
+              <li>
+                <Link to={`/Movies`} onClick={linkClick}>
+                  Main
+                </Link>
+              </li>
+              <li>
+                <Link to={`/category`} onClick={linkClick}>
+                  Category
+                </Link>
+              </li>
+              <li>
+                <Link to={`/Movies/my`} onClick={linkClick}>
+                  My
+                </Link>
+              </li>
+            </ul>
+          ) : null}
         </header>
       )}
       {loading ? null : (
@@ -92,7 +148,7 @@ function Category() {
       )}
       {loading ? null : (
         <div>
-          <p id={styles.genTitle}>{select ? select : 'Action'} Movies</p>
+          <p id={styles.genTitle}>{select ? select : "Action"} Movies</p>
           <div className={styles.movies}>
             {genre.map((gen) => (
               <Movie

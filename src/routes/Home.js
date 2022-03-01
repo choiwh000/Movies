@@ -22,7 +22,7 @@ function Home() {
   const [num, setNum] = useState(0);
   const [ham, setHam] = useState(false);
   const [click, setClick] = useState(true);
-  const [toggle, setToggle] = useState(false);
+  const [hamClick, setHamClick] = useState(true);
 
   const getMovies = async () => {
     const json = await (
@@ -44,8 +44,10 @@ function Home() {
   const setPosition = () => {
     if (window.innerWidth <= 600) {
       setHam(true);
+      setHamClick(false);
     } else if (window.innerWidth > 600) {
       setHam(false);
+      setHamClick(true);
     }
   };
   useInterval(() => {
@@ -74,10 +76,17 @@ function Home() {
   const clicked = () => {
     if (click === true) {
       setClick(false);
+      setHamClick(true);
     } else {
       setClick(true);
+      setHamClick(false);
     }
   };
+
+  const linkClick = () => {
+    setClick(true);
+    setHamClick(false);
+  }
 
   window.addEventListener("resize", setPosition);
   console.log(click);
@@ -87,26 +96,27 @@ function Home() {
     <div>
       {loading ? null : (
         <header>
-          <Link to={`/Movies`} id={styles.logo}>
+          <Link to={`/Movies`} id={styles.logo} onClick={linkClick}>
             Logo
           </Link>
           {ham ? (
             <p id={styles.ham} onClick={clicked}>
               {click ? hambar : esc}
             </p>
-          ) : (
+          ) : null}
+          {hamClick ? (
             <ul id={styles.home_ul}>
               <li>
-                <Link to={`/Movies`}>Main</Link>
+                <Link to={`/Movies`} onClick={linkClick}>Main</Link>
               </li>
               <li>
-                <Link to={`/category`}>Category</Link>
+                <Link to={`/category`} onClick={linkClick}>Category</Link>
               </li>
               <li>
-                <Link to={`/Movies/my`}>My</Link>
+                <Link to={`/Movies/my`} onClick={linkClick}>My</Link>
               </li>
             </ul>
-          )}
+          ) : null}
         </header>
       )}
 
